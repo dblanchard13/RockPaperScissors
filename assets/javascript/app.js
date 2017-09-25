@@ -49,10 +49,13 @@ database.ref("players").on("value", function(snapshot) {
 
     }
 
-    if (players.hasOwnProperty('player1') && players.player1.onlineState === false){
+    if (players.hasOwnProperty('player1') && players.player1.onlineState === false && players.hasOwnProperty('player2')){
     	var p = $('<p style=color:blue>')
 		p.text(players.player1.name+" disconnected")
 		$("#chat-box").append(p)
+
+		database.ref("players/player1/onlineState").onDisconnect().set(false)
+		database.ref("players/player2/onlineState").onDisconnect().cancel()
 
     	database.ref("players/player1").remove()
     	database.ref("players/player2").remove()
@@ -74,6 +77,11 @@ database.ref("players").on("value", function(snapshot) {
     	myPlayer = "player1"
 
     }
+
+    if (players.hasOwnProperty('player1') && players.player1.onlineState === false && !players.hasOwnProperty('player2')){
+    	database.ref("players/player1").remove()
+    }
+
 
 
 }, function(errorObject){ 
