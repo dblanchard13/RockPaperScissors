@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RPS!</title>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+    <script src="assets/javascript/app.js" defer> </script>
+
+</head>
+<body style="background-color: #EFE6D0">
+	<div class = "container" >
+		<div class="row text-center" style="background-color: #76BCB8; color: white">
+			<h1> Rock Paper Scissors </h1>
+		</div>
+		<div class="row text-center" id ="submit-button" style="margin-top:10px">
+          <form>
+            <!-- <div class="form-group" style="width: 100px"> -->
+              <label for="user-name" style="color: #86626E">Enter Your Name</label>
+              <input class="form" id="user-name" type="text">
+            <!-- </div> -->
+            <button class="btn btn-primary buttons" id="submit-username" type="submit">Submit</button>
+          </form>
+		</div>
+		<div class="row text-center">
+			<h2><span id="playerWelcome"> Hello! </span> </h2>
+		</div>
+		<div class="row text-center" >
+			<h2><span id="turnMessage"> </span> </h2>
+		</div>
+		<div class="row">
+			<div id="column-wrap">
+				<div class="col-sm-4 text-center " style=" height: 150px; border-right: 2px solid grey">
+					<div class="row username">
+						<span id="player-1-username">Waiting For Player 1</span>
+					</div>
+					<div class="row choices" id="player1-choices">
+
+					</div>
+					<div class="row score" id="player1-score">
+					
+					</div>
+
+				</div>
+				<div class="col-sm-4 text-center " style="height: 150px; border-right: 2px solid grey" >
+					<div class="row" id="winner">
+						
+					</div>
+
+				</div>
+				<div class="col-sm-4 text-center " style="height: 150px;" >
+					<div class="row username">
+						<span id="player-2-username">Waiting For Player 2</span>
+					</div>
+					<div class="row choices" id = "player2-choices">
+
+					</div>
+					<div class="row score" id="player2-score">
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4" id="chat-box">
+			</div>
+			<div class="col-sm-4 col-sm-offset-4">
+		          <form>
+		             <input class="form" id="chat-message" type="text">
+		            <button class="btn btn-primary buttons" id="submit-chat" type="submit" style="margin-top: 5px">Chat!</button>
+		          </form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<!-- style="width: 350px; height: 200px; border: 2px solid black" -->

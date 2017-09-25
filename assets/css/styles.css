@@ -1,0 +1,50 @@
+.choices {
+	height: 99px;
+}
+
+.username {
+	height: 25px;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #DBAFC1;
+	margin: 5px;
+	color: white;
+}
+
+.score {
+	height: 25px;
+}
+
+#chat-box {
+	background-color: #86626E;
+	height:100px; 
+	background-color:white; 
+	margin-top:20px; 
+	border:1px solid lightgrey; 
+	overflow: scroll
+}
+
+.buttons {
+	background-color: white;
+	border-color: white;
+	color: #86626E;
+}
+
+.btn-primary:hover {
+	background-color: #86626E;
+	border-color: #86626E;
+	color: white
+}
+
+p {
+	color: #86626E;
+}
+
+#playerWelcome {
+	color: #86626E
+}
+
+.choicePs:hover{
+	background-color: white;
+	color: #86626E
+}
