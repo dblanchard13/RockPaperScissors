@@ -1,10 +1,10 @@
 var config = {
-    apiKey: "AIzaSyDvfAhkbIULdrzhEv13fri3_yNuVepHAL4",
-    authDomain: "eneida-s-awesome-project.firebaseapp.com",
-    databaseURL: "https://eneida-s-awesome-project.firebaseio.com",
-    projectId: "eneida-s-awesome-project",
-    storageBucket: "eneida-s-awesome-project.appspot.com",
-    messagingSenderId: "426844293091"
+    apiKey: "AIzaSyCQcpQywndJvnXUfDIHgw8Ity1zgm9PmGM",
+    authDomain: "rockpaperscissors-6cc21.firebaseapp.com",
+    databaseURL: "https://rockpaperscissors-6cc21.firebaseio.com",
+    projectId: "rockpaperscissors-6cc21",
+    storageBucket: "",
+    messagingSenderId: "207848673652"
 };
 
 firebase.initializeApp(config);
