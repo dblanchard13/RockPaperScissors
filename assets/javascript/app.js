@@ -1,3 +1,6 @@
+// You should try to get in the habit of wrapping your JS code within a document.ready block or 
+// some other kind of functional closure so that you don't pollute the global scope with your variables.
+
 var config = {
     apiKey: "AIzaSyCQcpQywndJvnXUfDIHgw8Ity1zgm9PmGM",
     authDomain: "rockpaperscissors-6cc21.firebaseapp.com",
@@ -30,13 +33,20 @@ document.getElementById("submit-chat").disabled = true
 
 database.ref("players").on("value", function(snapshot) {
 
-	console.log(snapshot.val())
+  // It's generally best to keep console.log's out of your production code 🙃
+	// console.log(snapshot.val())
+
     if (snapshot.exists()) {
     	players = snapshot.val()
     }
 
     if (players.hasOwnProperty('player2') && players.player2.onlineState === false){
     	var p = $('<p style=color:blue>')
+
+    // I know it may seem like a silly thing to nitpick, but keeping your indentation consistent 
+    // can pay huge dividends towards maintainability because it allows for easier parsing and
+    // logically compartmentalizing code blocks.
+
 		p.text(players.player2.name+" disconnected")
 		$("#chat-box").append(p)
 
@@ -95,6 +105,8 @@ $("#submit-username").on("click", function() {
 	event.preventDefault();
 	document.getElementById("submit-chat").disabled = false
 
+  // These conditional blocks are somewhat repetitive, I'd suggest just determining the 
+  // unique information conditionally and then only writing the rest of the code once.
 
 	if (players.hasOwnProperty('player1')) {
 
@@ -153,7 +165,7 @@ $("#submit-username").on("click", function() {
 
 database.ref("turn").on("value", function(snapshot) {
 
-	console.log("turn")
+	// console.log("turn")
 
     if (snapshot.val() === myPlayer) {
 
@@ -175,8 +187,8 @@ database.ref("turn").on("value", function(snapshot) {
     }
 
     if (snapshot.val() === "calculate"){
-    	console.log(players.player1.choice)
-    	console.log(players.player2.choice)
+    	// console.log(players.player1.choice)
+    	// console.log(players.player2.choice)
 
 
     	if (players.player1.choice === "rock" && players.player2.choice === "scissors") {
@@ -261,7 +273,7 @@ function selectChoice() {
 
 
 function restart(){
-	console.log("restart")
+	// console.log("restart")
 	$("#playerWelcome").empty()
 	$("#winner").empty()
 	$("#player1-choices").empty()
@@ -277,6 +289,9 @@ function restart(){
 }
 
 
+
+// The player1Wins, player2Wins, and playersTie functions are somewhat repetitive
+// so I'd suggest trying to combine them into one function.
 
 function player1Wins(){
 
@@ -335,6 +350,7 @@ $("#submit-chat").on("click", function() {
 		message:$("#chat-message").val().trim()
 		})
 
+  // Nice job thinking to clear out the chat input!
 	$('#chat-message').val('')
 
 	// $("#chat-box").append(chatMessage)
